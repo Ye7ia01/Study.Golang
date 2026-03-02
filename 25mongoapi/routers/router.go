@@ -10,6 +10,12 @@ func Router() *mux.Router {
 	r := mux.NewRouter()
 
 	// Create
+	// movieController.CreateMovieAction is of "HandlerFunc" type which is a type in go
+	// with the method signature func(w ResponseWriter, r Request), any func with this signature
+	// can be used to handle routes
+	/*
+		i.e. HandleFunc(s rout, m HandlerFunc)
+	*/
 	r.HandleFunc("/api/movies", movieController.CreateMovieAction).Methods("POST")
 	// Get All
 	r.HandleFunc("/api/movies", movieController.GetAllMovieAction).Methods("GET")

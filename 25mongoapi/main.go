@@ -38,6 +38,7 @@ func main() {
 		ReadTimeout:  15 * time.Second,
 	}
 
+	/* Creates a goroutine automatically for each request */
 	log.Fatal(srv.ListenAndServe())
 
 	/*
